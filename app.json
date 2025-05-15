@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "spree",
+    "slug": "spree",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/adaptive-icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/spree/SpreeLogo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#19141E"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/spree/SpreeLogo.png",
+        "backgroundColor": "#19141E"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}
