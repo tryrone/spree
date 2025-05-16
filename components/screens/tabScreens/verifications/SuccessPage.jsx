@@ -12,10 +12,14 @@ import {
   } from 'react-native';
   import React from 'react';
   import Button from '../../../assecories/Button';
-  import { useNavigation } from '@react-navigation/native';
+  import { useNavigation, useRoute } from '@react-navigation/native';
   
   const SuccessPage = () => {
     const navigation = useNavigation();
+    const route = useRoute();
+  
+    // Extract desText and summary from route params
+    const { desText, summary } = route.params || {};
   
     return (
       <SafeAreaView style={styles.container}>
@@ -41,7 +45,7 @@ import {
                 />
                 <Text style={styles.titleText}>Successful!</Text>
                 <Text style={styles.descriptionText}>
-                  Your details have been submitted successfully.
+                  {desText}
                 </Text>
                 <Text
                   style={{
@@ -53,8 +57,7 @@ import {
                     lineHeight: 27
                   }}
                 >
-                  We are currently verifying your details. You will be notified once
-                  the process is successfully completed.
+                  {summary}
                 </Text>
               </View>
               <Button

@@ -1,8 +1,12 @@
-import { Image, Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
-import React from 'react';
+import { Image, Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
+import React, { useState } from 'react';
 import Button from '../../../../assecories/Button';
+import AnimatedInput from '../../../../assecories/AnimatedInput';
+import { useNavigation } from '@react-navigation/native';
 
-const Verif1 = ({ navigation }) => {
+const ChangeEmail = ({ navigation }) => {
+    const [email, setEmail] = useState('');
+
   return (
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView
@@ -12,20 +16,15 @@ const Verif1 = ({ navigation }) => {
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <ScrollView showsVerticalScrollIndicator={false}>
           <View style={{display: "flex", flexDirection:"column", alignItems: "flex-start"}}>
-              <Text style={styles.titleText}>Verify your e-mail address</Text>
+              <Text style={styles.titleText}>Verify your e-mail</Text>
               <Text style={styles.descriptionText}>
-                We have <Text style={{fontWeight: "500", color: "black"}}>fortunate@gmail.com</Text>  as your registered email address.
-              </Text>
-
-            <View style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
-                <Text style={{ fontSize: 16, }}>Not you? </Text>
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate('emailChange')}
-                    >
-                        <Text style={{color: "#5B19E5", fontSize: 16, }}>Change e-mail</Text>
-                    </TouchableOpacity>
-            </View>            
-
+                Kindly input the e-mail you would like to use here
+              </Text>         
+            <AnimatedInput
+              placeholder="favour@gmail.com"
+              value={email}
+              onChangeText={setEmail}
+            />
           </View>
             <View style={{ marginTop: '120%' }}>
               <Button
@@ -40,7 +39,7 @@ const Verif1 = ({ navigation }) => {
   );
 };
 
-export default Verif1;
+export default ChangeEmail;
 
 const styles = StyleSheet.create({
   container: {

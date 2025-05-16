@@ -9,13 +9,13 @@ export const verificationItems = [
     { 
       title: 'Email Verification', 
       subtitle: 'Complete your profile verification', 
-      navigation: 'emailVerif',
+      navigation: 'emailVerif1',
       isCompleted: false 
     },
     { 
       title: 'Phone number verification', 
       subtitle: 'Complete your Phone number verification', 
-      navigation: 'phoneVerif',
+      navigation: 'phoneVerif1',
       isCompleted: false 
     },
     { 
@@ -27,7 +27,7 @@ export const verificationItems = [
     { 
       title: 'Social Login', 
       subtitle: 'Integrate your social account', 
-      navigation: 'socialSetup',
+      navigation: 'socialVerif1',
       isCompleted: false 
     },
     { 

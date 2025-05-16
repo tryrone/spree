@@ -20,7 +20,7 @@ import {
     ];
   
     // Calculate container width dynamically
-    const buttonWidth = 80;
+    const buttonWidth = 65;
     const buttonMargin = 15;
     const buttonsPerRow = 3;
     const containerWidth = buttonsPerRow * (buttonWidth + 2 * buttonMargin);
@@ -55,8 +55,8 @@ import {
       marginVertical: 20,
     },
     dialpadButton: {
-      width: 80,
-      height: 80,
+      width: 65,
+      height: 65,
       justifyContent: 'center',
       alignItems: 'center',
       margin: 15,
@@ -67,7 +67,7 @@ import {
       backgroundColor: 'transparent',
     },
     dialpadButtonText: {
-      fontSize: 24,
+      fontSize: 20,
       color: '#1C202B',
     },
   });

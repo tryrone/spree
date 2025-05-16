@@ -65,9 +65,15 @@ const Verif2 = ({navigation}) => {
                     </View>
                     <View style={{ marginTop: '70%' }}>
                     <Button
-                        title="Submit"
-                        onPress={() => navigation.navigate('successPage')}
-                        />
+                      title="Submit"
+                      onPress={() =>
+                        navigation.navigate('successPage', {
+                          desText: 'Your details have been submitted successfully.',
+                          summary:
+                            'We are currently verifying your details. You will be notified once the process is successfully completed.',
+                        })
+                      }
+                    />
                     </View>
                     </ScrollView>
                 </TouchableWithoutFeedback>

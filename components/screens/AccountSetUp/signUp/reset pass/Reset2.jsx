@@ -143,11 +143,11 @@ const Reset2 = () => {
       flexDirection: 'row',
       justifyContent: 'space-between',
       marginVertical: 25,
-      marginHorizontal: 10
+      marginHorizontal: 40
     },
     inputCode: {
-      width: 64,
-      height: 64,
+      width: 54,
+      height: 54,
       borderWidth: 1,
       borderColor: '#CCCCCC',
       borderRadius: 8,

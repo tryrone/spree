@@ -27,9 +27,17 @@ import Reset1 from '../screens/AccountSetUp/signUp/reset pass/Reset1';
 import Reset2 from '../screens/AccountSetUp/signUp/reset pass/Reset2';
 import Reset3 from '../screens/AccountSetUp/signUp/reset pass/Reset3';
 import Profile from '../screens/tabScreens/Profile';
-import Verif1 from '../screens/tabScreens/verifications/kyc Verification/Verif1';
-import Verif2 from '../screens/tabScreens/verifications/kyc Verification/Verif2';
+import KycVerif1 from '../screens/tabScreens/verifications/kyc Verification/Verif1';
+import KycVerif2 from '../screens/tabScreens/verifications/kyc Verification/Verif2';
 import SuccessPage from '../screens/tabScreens/verifications/SuccessPage';
+import EmailVerif1 from '../screens/tabScreens/verifications/email Verification/Verif1';
+import ChangeEmail from '../screens/tabScreens/verifications/email Verification/ChangeEmail';
+import EmailVerif2 from '../screens/tabScreens/verifications/email Verification/Verif2';
+import ChangePhone from '../screens/tabScreens/verifications/phone Verification/ChangePhone';
+import PhoneVerif1 from '../screens/tabScreens/verifications/phone Verification/Verif1';
+import PhoneVerif2 from '../screens/tabScreens/verifications/phone Verification/Verif2';
+import SocialVerif1 from '../screens/tabScreens/verifications/social verification/Verif1';
+import SocialVerif2 from '../screens/tabScreens/verifications/social verification/Verif2';
 
 
 
@@ -162,8 +170,19 @@ const menuIcons = (route, focused) => {
                     <Stack.Screen name="reset3" component={Reset3} options={{ ...tabScreenOptions, headerTitle: "" }}  />
 
                     {/* Kyc Verification */}
-                    <Stack.Screen name="kycVerif1" component={Verif1} options={{ ...tabScreenOptions, headerTitle: "" }}  />
-                    <Stack.Screen name="kycVerif2" component={Verif2} options={{ ...tabScreenOptions, headerTitle: "" }}  />
+                    <Stack.Screen name="kycVerif1" component={KycVerif1} options={{ ...tabScreenOptions, headerTitle: "" }}  />
+                    <Stack.Screen name="kycVerif2" component={KycVerif2} options={{ ...tabScreenOptions, headerTitle: "" }}  />
+                    {/* Email Verification */}
+                    <Stack.Screen name="emailVerif1" component={EmailVerif1} options={{ ...tabScreenOptions, headerTitle: "" }}  />
+                    <Stack.Screen name="emailVerif2" component={EmailVerif2} options={{ ...tabScreenOptions, headerTitle: "" }}  />
+                    <Stack.Screen name="emailChange" component={ChangeEmail} options={{ ...tabScreenOptions, headerTitle: "" }}  />
+                    {/* Phone Verification */}
+                    <Stack.Screen name="phoneVerif1" component={PhoneVerif1} options={{ ...tabScreenOptions, headerTitle: "" }}  />
+                    <Stack.Screen name="phoneVerif2" component={PhoneVerif2} options={{ ...tabScreenOptions, headerTitle: "" }}  />
+                    <Stack.Screen name="phoneChange" component={ChangePhone} options={{ ...tabScreenOptions, headerTitle: "" }}  />
+                    {/* Socials Verification */}
+                    <Stack.Screen name="socialVerif1" component={SocialVerif1} options={{ ...tabScreenOptions, headerTitle: "" }}  />
+                    <Stack.Screen name="socialVerif2" component={SocialVerif2} options={{ ...tabScreenOptions, headerTitle: "" }}  />
 
                     {/* Success Page */}
                     <Stack.Screen name="successPage" component={SuccessPage} options={{ ...tabScreenOptions, headerTitle: "Success" }}  />
