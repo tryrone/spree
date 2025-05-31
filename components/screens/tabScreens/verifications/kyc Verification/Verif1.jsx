@@ -1,6 +1,7 @@
-import { Image, Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
+import { Image, Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
 import React from 'react';
 import Button from '../../../../assecories/Button';
+import Text from '../../../../assecories/TextFont';
 
 const Verif1 = ({ navigation }) => {
   return (
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     textAlign: 'left',
     color: '#000',
-    marginLeft: "-55%"
+    marginLeft: "-47%"
   },
   descriptionText: {
     fontSize: 16,

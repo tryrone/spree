@@ -1,10 +1,11 @@
-import { Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
+import { Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
 import React, { useState } from 'react'
 import SocialsOnboarding from '../../assecories/SocialsOnboarding'
 import AnimatedInput from '../../assecories/AnimatedInput'
 import PhoneNumberInput from '../../assecories/PhoneNumberInput'
 import Button from '../../assecories/Button'
 import { useNavigation } from '@react-navigation/native'
+import Text from '../../assecories/TextFont'
 
 const SignUp = () => {
   const navigation = useNavigation();

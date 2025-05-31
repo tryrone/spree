@@ -1,10 +1,11 @@
-import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
+import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, TextInput, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
 import React, { useRef, useState } from 'react'
 import AnimatedInput from '../../../../assecories/AnimatedInput'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Dialpad } from '../../../../assecories/Dailpad';
 import Button from '../../../../assecories/Button';
 import { useNavigation } from '@react-navigation/native';
+import Text from '../../../../assecories/TextFont'
 
 const Reset2 = () => {
     const navigation = useNavigation();

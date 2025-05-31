@@ -1,8 +1,9 @@
-import { Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native'
+import { Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, TouchableWithoutFeedback, View } from 'react-native'
 import React, { useState } from 'react'
 import Button from '../../../../assecories/Button'
 import AnimatedInput from '../../../../assecories/AnimatedInput'
 import { useNavigation } from '@react-navigation/native'
+import Text from '../../../../assecories/TextFont'
 
 const Reset1 = () => {
     const navigation = useNavigation();

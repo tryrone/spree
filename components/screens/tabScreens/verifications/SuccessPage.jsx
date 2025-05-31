@@ -6,13 +6,13 @@ import {
     SafeAreaView,
     ScrollView,
     StyleSheet,
-    Text,
     TouchableWithoutFeedback,
     View,
   } from 'react-native';
   import React from 'react';
   import Button from '../../../assecories/Button';
   import { useNavigation, useRoute } from '@react-navigation/native';
+import Text from '../../../assecories/TextFont';
   
   const SuccessPage = () => {
     const navigation = useNavigation();

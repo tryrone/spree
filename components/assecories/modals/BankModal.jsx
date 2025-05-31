@@ -1,6 +1,5 @@
 import { 
     StyleSheet, 
-    Text, 
     View, 
     Modal, 
     TouchableOpacity, 
@@ -11,6 +10,7 @@ import {
   import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
   import Octicons from '@expo/vector-icons/Octicons';
   import { NIGERIAN_BANKS } from '../../Dummy Data/data';
+import Text from '../TextFont';
   
   const BankModal = ({ 
     visible, 

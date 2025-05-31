@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react';
-import { Platform, LogBox, View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
+import { Platform, LogBox, View, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -38,6 +38,10 @@ import PhoneVerif1 from '../screens/tabScreens/verifications/phone Verification/
 import PhoneVerif2 from '../screens/tabScreens/verifications/phone Verification/Verif2';
 import SocialVerif1 from '../screens/tabScreens/verifications/social verification/Verif1';
 import SocialVerif2 from '../screens/tabScreens/verifications/social verification/Verif2';
+import Text from '../assecories/TextFont';
+import TransactionDetails from '../screens/tabScreens/transaction extentions/TransactionDetails';
+import MessageDetails from '../screens/tabScreens/message extension/MessageDetails';
+import { messageData } from '../Dummy Data/data';
 
 
 
@@ -65,6 +69,13 @@ const menuIcons = (route, focused) => {
   
     return (
       <View style={{ display: "flex", justifyContent: 'center', alignItems: 'center' , flexDirection: "column"}}>
+        {
+          route.name === 'messages'
+          ? <Text style={styles.messageBage}>
+              {messageData.filter(msg => msg.status === 'unread').length}
+            </Text> : 
+          <Text></Text>
+        }
         {icon}
         <Text style={{ color: focused ? '#263238' : '#8e8e8e', fontSize: 12, marginTop: 2, width:"100%", height:"100%" }}>
           {route.name.charAt(0).toUpperCase() + route.name.slice(1)}
@@ -76,6 +87,7 @@ const menuIcons = (route, focused) => {
   const tabScreenOptions = {
     headerShown: true,
     headerTintColor: '#000',
+
     headerTitleStyle: {
       fontWeight: 'medium',
       fontSize: 18,
@@ -118,7 +130,7 @@ const menuIcons = (route, focused) => {
           <Tab.Screen name="home" component={HomeStackScreen} />
           <Tab.Screen name="messages" component={Messages} options={{ ...tabScreenOptions, headerTitle: "Messages" }} />
           <Tab.Screen name="store" component={Store} options={{ ...tabScreenOptions, headerTitle: "Store" }} />
-          <Tab.Screen name="transactions" component={Transactions} options={{ ...tabScreenOptions, headerTitle: "Transactions" }} />
+          <Tab.Screen name="transactions" component={Transactions} options={{ ...tabScreenOptions, headerTitle: "" }} />
           <Tab.Screen name="profile"  options={{ ...tabScreenOptions, headerTitle: "Profile" }} >
           {()=><Profile />}
           </Tab.Screen>
@@ -184,6 +196,12 @@ const menuIcons = (route, focused) => {
                     <Stack.Screen name="socialVerif1" component={SocialVerif1} options={{ ...tabScreenOptions, headerTitle: "" }}  />
                     <Stack.Screen name="socialVerif2" component={SocialVerif2} options={{ ...tabScreenOptions, headerTitle: "" }}  />
 
+                    {/* Transaction Details */} 
+                    <Stack.Screen name="transactionDets" component={TransactionDetails} options={{ ...tabScreenOptions, headerTitle: "" }}  />       
+
+                    {/* Message Details */} 
+                    <Stack.Screen name="messageDets" component={MessageDetails} options={{ ...tabScreenOptions, headerTitle: "Raised dispute" }}  />                 
+
                     {/* Success Page */}
                     <Stack.Screen name="successPage" component={SuccessPage} options={{ ...tabScreenOptions, headerTitle: "Success" }}  />
                 </Stack.Navigator>
@@ -198,5 +216,19 @@ const menuIcons = (route, focused) => {
       // marginVertical: 20, 
       zIndex: 1,
     },
+    messageBage: {
+      position: "absolute",
+      top: -27,
+      right: 4,
+      backgroundColor: "#E7503C",
+      color: "white",
+      padding: 2.5,
+      paddingLeft: 5,
+      paddingBottom: 18,
+      fontSize: 11,
+      borderRadius: 999,
+      width: 18,
+      height: 18
+    }
   });
   

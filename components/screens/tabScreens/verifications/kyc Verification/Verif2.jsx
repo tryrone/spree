@@ -1,9 +1,10 @@
-import { Image, Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
+import { Image, Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
 import React, { useState } from 'react'
 import Button from '../../../../assecories/Button';
 import AnimatedInput from '../../../../assecories/AnimatedInput';
 import Entypo from '@expo/vector-icons/Entypo';
 import BankModal from '../../../../assecories/modals/BankModal';
+import Text from '../../../../assecories/TextFont';
 
 const Verif2 = ({navigation}) => {
     const [bvnNo, setBvnNo] = useState('');
@@ -110,7 +111,7 @@ const styles = StyleSheet.create({
         marginBottom: 8,
         textAlign: 'left',
         color: '#000',
-        marginLeft: "-55%"
+        marginLeft: "-48%"
       },
       descriptionText: {
         fontSize: 16,

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { 
   View, 
-  Text, 
   StyleSheet, 
   Animated, 
   Easing,
@@ -17,6 +16,7 @@ import { useNavigation } from '@react-navigation/native';
 import AnimatedInput from '../../../../assecories/AnimatedInput';
 import Button from '../../../../assecories/Button';
 import PolicyModal from '../../../../assecories/PolicyModal';
+import Text from '../../../../assecories/TextFont'
 
 // Custom CheckIcon component that doesn't require external dependencies
 const CheckIcon = ({ color }) => (

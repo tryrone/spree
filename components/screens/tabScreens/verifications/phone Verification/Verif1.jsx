@@ -1,6 +1,7 @@
-import { Image, Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
+import { Image, Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
 import React from 'react';
 import Button from '../../../../assecories/Button';
+import Text from '../../../../assecories/TextFont';
 
 const Verif1 = ({ navigation }) => {
   return (

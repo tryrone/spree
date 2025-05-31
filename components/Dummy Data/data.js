@@ -1,3 +1,5 @@
+import img from '../../assets/spree/shoe.png'
+
   // Verification items data
 export const verificationItems = [
     { 
@@ -110,3 +112,150 @@ export const verificationItems = [
     { id: '18', name: 'Wema Bank', code: '035' },
     { id: '19', name: 'Zenith Bank', code: '057' },
   ];
+
+  // transactins data
+  export const transactionData = [
+    {
+      title: 'Today',
+      data: [
+        {
+          name: 'Josiah Doe',
+          role: 'Buyer',
+          description: 'Apple vision pro. Black..',
+          amount: '₦500,000',
+          status: 'Initiated',
+        },
+        {
+          name: 'Jane Dane',
+          role: 'Seller',
+          description: 'Apple vision pro. Black..',
+          amount: '₦500,000',
+          status: 'Paid',
+        },
+        {
+          name: 'Josiah Doe',
+          role: 'Buyer',
+          description: 'Apple vision pro. Black..',
+          amount: '₦500,000',
+          status: 'Closed',
+        },
+      ],
+    },
+    {
+      title: 'Yesterday',
+      data: [
+        {
+          name: 'Josiah Doe',
+          role: 'Buyer',
+          description: 'Apple vision pro. Black..',
+          amount: '₦500,000',
+          status: 'Settled',
+        },
+        {
+          name: 'Jane Dane',
+          role: 'Seller',
+          description: 'Apple vision pro. Black..',
+          amount: '₦500,000',
+          status: 'Initiated',
+        },
+        {
+          name: 'Josiah Doe',
+          role: 'Seller',
+          description: 'Apple vision pro. Black..',
+          amount: '₦500,000',
+          status: 'In dispute',
+        },
+      ],
+    },
+  ];
+
+  export const transactionDetails = [
+    {
+      "header": {
+        "status": "Waiting for payment..",
+        "messageButtonText": "Message Buyer"
+      },
+      "amount": {
+        "value": "₦120,000",
+        "initiatedBy": "buyer"
+      },
+      "buyerDetails": {
+        "name": "Fortunate Chuwks",
+        "number": "09052810663"
+      },
+      "timeline": [
+        {
+          "label": "Closed (in favor of the buyer)",
+          "date": "24th December, 2023"
+        },
+        {
+          "label": "Dispute raised",
+          "date": "24th December, 2023"
+        },
+        {
+          "label": "Received",
+          "date": "24th December, 2023"
+        },
+        {
+          "label": "Paid",
+          "date": "24th December, 2023"
+        },
+        {
+          "label": "Initiated",
+          "date": "24th December, 2023"
+        },
+        {
+          "label": "Delivery date",
+          "date": "29th December, 2023"
+        }
+      ],
+      "dates": [
+        {
+          "label": "Delivery date",
+          "value": "29th December, 2023"
+        },
+        {
+          "label": "Inspection date (3 days from delivery)",
+          "value": "1st January, 2024"
+        }
+      ],
+      "note": "NB: Complaints must be raised before the inspection period ends, or the transaction is considered complete",
+      "productDetails": {
+        "name": "Clothing, shoe",
+        "quality": "2 qualities",
+        "condition": "Perfect",
+        "images": ["cloth", "cloth", "cloth", "cloth"]
+      }
+    }
+  ];
+
+  export const messageData =  [
+    {
+      image: img,
+      store: "A&M thrift",
+      message: "Thank you",
+      date: "15:41 PM",
+      status: "read"
+    },
+    {
+      image: img,
+      store: "A&M thrift",
+      message: "Thank you",
+      date: "15:41 PM",
+      status: "unread"
+    },
+    {
+      image: img,
+      store: "A&M thrift",
+      message: "Thank you",
+      date: "15:41 PM",
+      status: "read"
+    },
+    {
+      image: img,
+      store: "A&M thrift",
+      message: "Thank you",
+      date: "15:41 PM",
+      status: "unread"
+    }
+  ]

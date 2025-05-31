@@ -26,6 +26,18 @@ export const globalStyles = StyleSheet.create({
     fontFamily: 'Poppins-Bold',
     fontSize: 20,
   },
+  row: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 20
+  },
+  colum: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start"
+  }
 });
 
 // export const colors = {

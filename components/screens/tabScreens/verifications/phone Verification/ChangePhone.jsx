@@ -1,7 +1,8 @@
-import { Image, Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
+import { Image, Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
 import React, { useState } from 'react';
 import Button from '../../../../assecories/Button';
 import PhoneNumberInput from '../../../../assecories/PhoneNumberInput';
+import Text from '../../../../assecories/TextFont';
 
 const ChangePhone = ({ navigation }) => {
   const [phone, setPhone] = useState('');

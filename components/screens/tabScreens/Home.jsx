@@ -1,8 +1,9 @@
-import { Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, Text, TouchableWithoutFeedback, View, TouchableOpacity, Image } from 'react-native'
+import { Keyboard, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StyleSheet, TouchableWithoutFeedback, View, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { Ionicons, FontAwesome, AntDesign } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native';
 import { pendingRequests, recentOrders, verificationItems } from '../../Dummy Data/data';
+import Text from '../../assecories/TextFont';
 
 const Home = () => {
   const navigation = useNavigation();
@@ -183,7 +184,7 @@ export default Home
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#F7F9FC",
   },
   loadingContainer: {
     flex: 1,
@@ -198,7 +199,7 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: '600',
     color: '#000',
   },
   headerSubtitle: {
@@ -238,7 +239,7 @@ const styles = StyleSheet.create({
   escrowButtonText: {
     color: '#000',
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '400',
   },
   // New styles for Pending Requests and Recent Orders
   section: {
@@ -252,13 +253,13 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 18,
-    fontWeight: '600',
+    fontWeight: '500',
     color: '#333',
   },
   viewAllText: {
     fontSize: 16,
     color: '#333',
-    fontWeight: '500',
+    fontWeight: '400',
     textDecorationLine: "underline"
   },
   sectionCard: {
@@ -285,7 +286,7 @@ const styles = StyleSheet.create({
   },
   requestName: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '400',
     color: '#333',
     marginBottom: 4,
   },
@@ -294,7 +295,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   roleLabel: {
-    fontSize: 14,
+    fontSize: 12,
     color: '#666',
     marginRight: 4,
   },
@@ -304,7 +305,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   roleText: {
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: '500',
   },
   requestDetails: {
@@ -319,7 +320,7 @@ const styles = StyleSheet.create({
   },
   requestAmount: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '400',
     color: '#333',
   },
   divider: {
@@ -342,11 +343,11 @@ const styles = StyleSheet.create({
   },
   orderTitle: {
     fontSize: 16,
-    fontWeight: '500',
+    fontWeight: '400',
     color: '#333',
   },
   orderDetails: {
-    fontSize: 14,
+    fontSize: 12,
     color: '#666',
     marginTop: 2,
   },
@@ -357,7 +358,7 @@ const styles = StyleSheet.create({
   },
   verificationTitle: {
     fontSize: 18,
-    fontWeight: '600',
+    fontWeight: '500',
     marginBottom: 16,
     color: '#333',
   },
@@ -377,11 +378,11 @@ const styles = StyleSheet.create({
   },
   verificationCardTitle: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '400',
     color: '#000',
   },
   verificationCardSubtitle: {
-    fontSize: 14,
+    fontSize: 12,
     color: '#555',
     marginTop: 4,
   },
