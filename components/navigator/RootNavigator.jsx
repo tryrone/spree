@@ -42,6 +42,7 @@ import Text from '../assecories/TextFont';
 import TransactionDetails from '../screens/tabScreens/transaction extentions/TransactionDetails';
 import MessageDetails from '../screens/tabScreens/message extension/MessageDetails';
 import { messageData } from '../Dummy Data/data';
+import SubCategories from '../screens/tabScreens/storeDrop/SubCategories';
 
 
 
@@ -68,7 +69,7 @@ const menuIcons = (route, focused) => {
     }
   
     return (
-      <View style={{ display: "flex", justifyContent: 'center', alignItems: 'center' , flexDirection: "column"}}>
+      <View style={{ display: "flex", justifyContent: 'center', alignItems: 'center' , flexDirection: "column", position: "relative"}}>
         {
           route.name === 'messages'
           ? <Text style={styles.messageBage}>
@@ -200,7 +201,10 @@ const menuIcons = (route, focused) => {
                     <Stack.Screen name="transactionDets" component={TransactionDetails} options={{ ...tabScreenOptions, headerTitle: "" }}  />       
 
                     {/* Message Details */} 
-                    <Stack.Screen name="messageDets" component={MessageDetails} options={{ ...tabScreenOptions, headerTitle: "Raised dispute" }}  />                 
+                    <Stack.Screen name="messageDets" component={MessageDetails} options={{ ...tabScreenOptions, headerTitle: "Raised dispute" }}  />   
+
+                    {/* Sub Categories Screen */} 
+                    <Stack.Screen name="subCategories" component={SubCategories} options={{ ...tabScreenOptions, headerTitle: "" }}  />                 
 
                     {/* Success Page */}
                     <Stack.Screen name="successPage" component={SuccessPage} options={{ ...tabScreenOptions, headerTitle: "Success" }}  />
@@ -217,9 +221,7 @@ const menuIcons = (route, focused) => {
       zIndex: 1,
     },
     messageBage: {
-      position: "absolute",
-      top: -27,
-      right: 4,
+      position: "static",
       backgroundColor: "#E7503C",
       color: "white",
       padding: 2.5,
@@ -228,7 +230,9 @@ const menuIcons = (route, focused) => {
       fontSize: 11,
       borderRadius: 999,
       width: 18,
-      height: 18
+      height: 18,
+      marginLeft: 34,
+      marginBottom: -10
     }
   });
   

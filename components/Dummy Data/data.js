@@ -1,4 +1,7 @@
-import img from '../../assets/spree/shoe.png'
+import img from '../../assets/spree/store/thanos.jpeg'
+import img1 from '../../assets/spree/store/cap.jpeg'
+import img2 from '../../assets/spree/store/sups.jpeg'
+import img3 from '../../assets/spree/store/bat.jpeg'
 
   // Verification items data
 export const verificationItems = [
@@ -259,3 +262,153 @@ export const verificationItems = [
       status: "unread"
     }
   ]
+
+  export const productsGoods =  [
+    {
+      id: 1,
+      name: 'Fresh Thanos shades',
+      price: '$1,200',
+      category: 'Electronics',
+      image: img,
+      store: 'Marvel Studio',
+      about: "You Could Not Live With Your Own Failure, And Where Did That Bring You? Back To Me."
+    },
+    {
+      id: 2,
+      name: 'Captain Fucking America',
+      price: '$85',
+      category: 'Dresses',
+      image: img1,
+      store: 'Marvel Studio',
+      about: "The Price Of Freedom Is High. It Always Has Been. And It's A Price I'm Willing To Pay."
+    },
+    {
+      id: 3,
+      name: 'Superman Leather Jacket',
+      price: '$250',
+      category: 'Jackets',
+      image: img2,
+      store: 'DC Studios',
+      about: "I Believe In Second Chances, I Believe In Redemption, But, Mostly, I Believe In My Friends."
+    },
+    {
+      id: 4,
+      name: 'The Dark Knight',
+      price: '$65',
+      category: 'Pants',
+      image: img3,
+      store: 'DC Studios',
+      about: "The voice kept calling me Bruce. In my mind, that's not what I call myself."
+    }
+  ]
+
+  export const category = [
+    {
+      id: 1,
+      image: img,
+      title: "Women's clothings"
+    },
+    {
+      id: 2,
+      image: img1,
+      title: "Men's clothings"
+    },
+    {
+      id: 3,
+      image: img2,
+      title: "Accessories"
+    },
+    {
+      id: 4,
+      image: img3,
+      title: "Shoes"
+    },
+    {
+      id: 5,
+      image: img,
+      title: "Electronics"
+    },
+    {
+      id: 6,
+      image: img1,
+      title: "Beauty"
+    },
+    {
+      id: 7,
+      image: img2,
+      title: "Sports and Outdoors"
+    },
+    {
+      id: 8,
+      image: img3,
+      title: "Health and Wellness"
+    },
+    {
+      id: 9,
+      image: img,
+      title: "Toys and Games"
+    },
+    {
+      id: 10,
+      image: img1,
+      title: "Baby and Kids"
+    },
+  ]
+
+  export const subCategoryProducts = [
+    {
+      id: 1,
+      name: "Checkered shirt",
+      price: "₦150,000",
+      rating: 4.0,
+      image: require('../../assets/spree/store/lex.jpg'),
+      category: "Shirts",
+      description: "Red stripes and something"
+    },
+    {
+      id: 2,
+      name: "Beige pants",
+      price: "₦150,000",
+      rating: 4.0,
+      image: require('../../assets/spree/store/metamopho.jpg'),
+      category: "Pants",
+      description: "Comfortable beige trousers"
+    },
+    {
+      id: 3,
+      name: "White wedding gown",
+      price: "₦150,000",
+      rating: 4.0,
+      image: require('../../assets/spree/store/mrt.jpg'), 
+      category: "Dresses",
+      description: "Elegant white wedding dress"
+    },
+    {
+      id: 4,
+      name: "White wedding gown",
+      price: "₦150,000",
+      rating: 1000,
+      image: require('../../assets/spree/store/thanos.jpeg'), 
+      category: "Dresses",
+      description: "Beautiful white wedding gown"
+    },
+    {
+      id: 5,
+      name: "Checkered shirt",
+      price: "₦150,000",
+      rating: 4.0,
+      image: require('../../assets/spree/store/sups.jpeg'), 
+      category: "Shirts",
+      description: "Stylish checkered pattern shirt"
+    },
+    {
+      id: 6,
+      name: "Checkered shirt",
+      price: "₦150,000",
+      rating: 4.0,
+      image: require('../../assets/spree/store/metamopho.jpg'), 
+      category: "Shirts",
+      description: "Classic checkered design"
+    }
+  ];
+  

@@ -37,7 +37,14 @@ export const globalStyles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start"
-  }
+  },
+  storeRow: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 20,
+    marginVertical: 5
+  },
 });
 
 // export const colors = {
