@@ -22,6 +22,9 @@ import { useNavigation } from '@react-navigation/native';
 import Categories from './storeDrop/Categories';
 import Wishlist from './storeDrop/Wishlist';
 import AnimatedProductCard from './animation/AnimatedProductCard';
+import { ALERT_TYPE, Dialog, AlertNotificationRoot, Toast } from 'react-native-alert-notification';
+import { CartIconButton, useCart } from '../../assecories/CartComponents';
+import cartStorage from '../../assecories/CartStorage';
 
 const Store = () => {
   const [selectedCategory, setSelectedCategory] = useState('Explore');
@@ -29,17 +32,14 @@ const Store = () => {
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('All');
-  const [cartItems, setCartItems] = useState({});
-  const [likedItems, setLikedItems] = useState({}); // New state for liked products
+  const [likedItems, setLikedItems] = useState({});
   const navigation = useNavigation();
 
   const dropdownAnim = useRef(new Animated.Value(0)).current;
   const searchAnim = useRef(new Animated.Value(-100)).current;
   const filterAnim = useRef(new Animated.Value(0)).current;
 
-  // Sample product data
   const [products] = useState(productsGoods);
-
   const categories = ['Explore', 'Categories', 'Wishlist'];
   const filters = ['All', 'Stores', 'Pants', 'Dresses', 'Jackets', 'Accessories'];
 
@@ -101,9 +101,6 @@ const Store = () => {
   const selectCategory = (category) => {
     setSelectedCategory(category);
     setIsDropdownOpen(false);
-    if (category === "Categories") {
-      <Categories/>
-    }
   };
 
   const toggleSearch = () => {
@@ -111,17 +108,35 @@ const Store = () => {
   };
 
   const handleAddToCart = (productId) => {
-    setCartItems(prev => ({
-      ...prev,
-      [productId]: (prev[productId] || 0) + 1
-    }));
+    cartStorage.addItem(productId);
+    Toast.show({
+      type: ALERT_TYPE.SUCCESS,
+      title: 'Added to Cart!',
+      textBody: 'Product successfully added to your cart',
+    });
   };
 
   const handleToggleLike = (productId) => {
+    const wasLiked = likedItems[productId];
+    
     setLikedItems(prev => ({
       ...prev,
-      [productId]: !prev[productId] // Toggle the liked state
+      [productId]: !prev[productId]
     }));
+
+    if (wasLiked) {
+      Toast.show({
+        type: ALERT_TYPE.WARNING,
+        title: 'Removed from Wishlist',
+        textBody: 'Item removed from your wishlist',
+      });
+    } else {
+      Toast.show({
+        type: ALERT_TYPE.SUCCESS,
+        title: 'Added to Wishlist!',
+        textBody: 'Item added to your wishlist',
+      });
+    }
   };
 
   const filteredProducts = products.filter(product => {
@@ -133,10 +148,6 @@ const Store = () => {
     return matchesSearch && matchesFilter;
   });
 
-  const getTotalCartItems = () => {
-    return Object.values(cartItems).reduce((sum, count) => sum + count, 0);
-  };
-
   const renderProduct = (product, index) => (
     <AnimatedProductCard
       key={product.id}
@@ -146,11 +157,10 @@ const Store = () => {
       onToggleLike={handleToggleLike}
       onMessageSeller={() => navigation.navigate('messageDets')}
       isLiked={likedItems[product.id]}
-      cartCount={cartItems[product.id] || 0}
+      cartCount={cartStorage.getItemCount(product.id)}
     />
   );
 
-  // Render content based on selected category
   const renderContent = () => {
     if (selectedCategory === 'Categories') {
       return <Categories />;
@@ -227,78 +237,75 @@ const Store = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
+    <AlertNotificationRoot>
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
 
-      {/* Header */}
-      <View style={styles.header}>
-        <TouchableOpacity style={styles.categoryButton} onPress={toggleDropdown}>
-          <Text style={styles.categoryText}>{selectedCategory}</Text>
-          <MaterialIcons
-            name={isDropdownOpen ? 'keyboard-arrow-up' : 'keyboard-arrow-down'}
-            size={24}
-            color="#1A1A1A"
-          />
-        </TouchableOpacity>
-
-        <View style={styles.headerIcons}>
-          <TouchableOpacity style={styles.iconButton} onPress={toggleSearch}>
-            <Feather name={isSearchActive ? 'x' : 'search'} size={24} color="#1A1A1A" />
+        {/* Header */}
+        <View style={styles.header}>
+          <TouchableOpacity style={styles.categoryButton} onPress={toggleDropdown}>
+            <Text style={styles.categoryText}>{selectedCategory}</Text>
+            <MaterialIcons
+              name={isDropdownOpen ? 'keyboard-arrow-up' : 'keyboard-arrow-down'}
+              size={24}
+              color="#1A1A1A"
+            />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.iconButton}>
-            <MaterialIcons name="shopping-cart" size={24} color="#1A1A1A" />
-            {getTotalCartItems() > 0 && (
-              <View style={styles.cartBadge}>
-                <Text style={styles.cartBadgeText}>{getTotalCartItems()}</Text>
-              </View>
-            )}
-          </TouchableOpacity>
-        </View>
-      </View>
 
-      {/* Dropdown Menu */}
-      {isDropdownOpen && (
-        <Animated.View
-          style={[
-            styles.dropdown,
-            {
-              opacity: dropdownAnim,
-              transform: [
-                {
-                  translateY: dropdownAnim.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [-20, 0],
-                  }),
-                },
-              ],
-            },
-          ]}
-        >
-          {categories.map((category) => (
-            <TouchableOpacity
-              key={category}
-              style={[
-                styles.dropdownItem,
-                selectedCategory === category && styles.selectedDropdownItem,
-              ]}
-              onPress={() => selectCategory(category)}
-            >
-              <Text
-                style={[
-                  styles.dropdownText,
-                  selectedCategory === category && styles.selectedDropdownText,
-                ]}
-              >
-                {category}
-              </Text>
+          <View style={styles.headerIcons}>
+            <TouchableOpacity style={styles.iconButton} onPress={toggleSearch}>
+              <Feather name={isSearchActive ? 'x' : 'search'} size={24} color="#1A1A1A" />
             </TouchableOpacity>
-          ))}
-        </Animated.View>
-      )}
+            <CartIconButton 
+              onPress={() => navigation.navigate('Cart')}
+            />
+          </View>
+        </View>
 
-      {/* Main Content */}
-      {renderContent()}
-    </SafeAreaView>
+        {/* Dropdown Menu */}
+        {isDropdownOpen && (
+          <Animated.View
+            style={[
+              styles.dropdown,
+              {
+                opacity: dropdownAnim,
+                transform: [
+                  {
+                    translateY: dropdownAnim.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [-20, 0],
+                    }),
+                  },
+                ],
+              },
+            ]}
+          >
+            {categories.map((category) => (
+              <TouchableOpacity
+                key={category}
+                style={[
+                  styles.dropdownItem,
+                  selectedCategory === category && styles.selectedDropdownItem,
+                ]}
+                onPress={() => selectCategory(category)}
+              >
+                <Text
+                  style={[
+                    styles.dropdownText,
+                    selectedCategory === category && styles.selectedDropdownText,
+                  ]}
+                >
+                  {category}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </Animated.View>
+        )}
+
+        {/* Main Content */}
+        {renderContent()}
+      </SafeAreaView>
+    </AlertNotificationRoot>
   );
 };
 

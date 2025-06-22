@@ -43,6 +43,8 @@ import TransactionDetails from '../screens/tabScreens/transaction extentions/Tra
 import MessageDetails from '../screens/tabScreens/message extension/MessageDetails';
 import { messageData } from '../Dummy Data/data';
 import SubCategories from '../screens/tabScreens/storeDrop/SubCategories';
+import ProductScreen from '../screens/tabScreens/storeDrop/ProductScreen';
+import Cart from '../screens/tabScreens/storeDrop/Cart';
 
 
 
@@ -204,7 +206,13 @@ const menuIcons = (route, focused) => {
                     <Stack.Screen name="messageDets" component={MessageDetails} options={{ ...tabScreenOptions, headerTitle: "Raised dispute" }}  />   
 
                     {/* Sub Categories Screen */} 
-                    <Stack.Screen name="subCategories" component={SubCategories} options={{ ...tabScreenOptions, headerTitle: "" }}  />                 
+                    <Stack.Screen name="subCategories" component={SubCategories} options={{ ...tabScreenOptions, headerTitle: "" }}  />
+
+                    {/* Sub Categories Screen */} 
+                    <Stack.Screen name="products" component={ProductScreen} options={{ ...tabScreenOptions, headerTitle: "" }}  />     
+
+                    {/* Cart Screen */} 
+                    <Stack.Screen name="Cart" component={Cart} options={{ ...tabScreenOptions, headerTitle: "Cart Summary" }}  />                 
 
                     {/* Success Page */}
                     <Stack.Screen name="successPage" component={SuccessPage} options={{ ...tabScreenOptions, headerTitle: "Success" }}  />

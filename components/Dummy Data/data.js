@@ -1,7 +1,7 @@
 import img from '../../assets/spree/store/thanos.jpeg'
-import img1 from '../../assets/spree/store/cap.jpeg'
-import img2 from '../../assets/spree/store/sups.jpeg'
-import img3 from '../../assets/spree/store/bat.jpeg'
+import img1 from '../../assets/spree/store/bag1.png'
+import img2 from '../../assets/spree/store/bag2.png'
+import img3 from '../../assets/spree/store/bag3.png'
 
   // Verification items data
 export const verificationItems = [
@@ -412,3 +412,46 @@ export const verificationItems = [
     }
   ];
   
+  export const productData = {
+    id: 1,
+    name: 'Brown Leather Hand Bag',
+    price: '₦ 20,000',
+    rating: 4.85,
+    reviews: 10,
+    likes: 200,
+    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop',
+    store: 'A&M Thrift Store',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Alli non vulputate libero et velit.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    colors: ['#000000', '#fff', '#D2691E', '#F4A460', '#32CD32'],
+  };
+
+  export const cart = [
+      {
+        id: 1,
+        name: 'BROWN LEATHER HAND BAG',
+        description: 'Small, white',
+        price: 20000,
+        quantity: 1,
+        store: 'A&M Thrift Store',
+        image: img1
+      },
+      {
+        id: 2,
+        name: 'BROWN LEATHER HAND BAG',
+        description: 'Small, white',
+        price: 20000,
+        quantity: 1,
+        store: 'A&M Thrift Store',
+        image: img1
+      },
+      {
+        id: 3,
+        name: 'BROWN LEATHER HAND BAG',
+        description: 'Small, white',
+        price: 20000,
+        quantity: 1,
+        store: 'A&M Thrift Store',
+        image: img1
+      }
+    ]

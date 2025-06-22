@@ -10,6 +10,8 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import { styles } from '../tabStyles/StoreStyles';
 import Text from '../../../assecories/TextFont';
 import { globalStyles } from '../../../assecories/Globalstyle';
+import { useNavigation } from '@react-navigation/native';
+import { AddToCartIconButton } from '../../../assecories/CartComponents';
 
 const AnimatedProductCard = ({ 
   product, 
@@ -23,6 +25,7 @@ const AnimatedProductCard = ({
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(50)).current;
   const scaleAnim = useRef(new Animated.Value(0.8)).current;
+  const navigation = useNavigation();
 
   useEffect(() => {
     // Stagger animation based on index
@@ -81,31 +84,35 @@ const AnimatedProductCard = ({
         },
       ]}
     >
-      <View style={styles.productImageContainer}>
-        <Image source={product.image} style={styles.productImage} />
-        <Text style={styles.productPrice}>{product.price}</Text>
-        <Text style={styles.productName}>{product.name}</Text>
-        
-        <TouchableOpacity 
-          style={styles.addToCartButtons}
-          onPress={() => handlePress(() => onToggleLike(product.id))}
-          activeOpacity={0.7}
-        >
-          {isLiked ? (
-            <AntDesign name="heart" size={24} color="red" />
-          ) : (
-            <AntDesign name="hearto" size={24} color="#000" />
-          )}
-        </TouchableOpacity>
-        
-        <TouchableOpacity 
-          style={styles.addToCartButton}
-          onPress={() => handlePress(() => onAddToCart(product.id))}
-          activeOpacity={0.7}
-        >
-          <MaterialIcons name="add-shopping-cart" size={24} color="#000" />
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity onPress={() => navigation.navigate("products")}>
+        <View style={styles.productImageContainer}>
+          <Image source={product.image} style={styles.productImage} />
+          <Text style={styles.productPrice}>{product.price}</Text>
+          <Text style={styles.productName}>{product.name}</Text>
+          
+          <TouchableOpacity 
+            style={styles.addToCartButtons}
+            onPress={() => handlePress(() => onToggleLike(product.id))}
+            activeOpacity={0.7}
+          >
+            {isLiked ? (
+              <AntDesign name="heart" size={24} color="red" />
+            ) : (
+              <AntDesign name="hearto" size={24} color="#000" />
+            )}
+          </TouchableOpacity>
+          
+          <TouchableOpacity 
+            style={styles.addToCartButton}
+          >
+            <AddToCartIconButton
+              onPress={onAddToCart}
+              productName={product.name}
+              style={styles.customActionButton}
+            />
+          </TouchableOpacity>
+        </View>
+      </TouchableOpacity>
       
       <View style={globalStyles.storeRow}>
         <Text>{product.store}</Text>
